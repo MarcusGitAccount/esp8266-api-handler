@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Creating an endpoint to collect data from an ESP8266 board and then further transmit it.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "ESP8226",
+    "socket",
+    "api",
+    "http",
+    "wifi"
+  ],
+  "author": "Marcus Pop",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "ip": "^1.1.5"
+  }
+}
