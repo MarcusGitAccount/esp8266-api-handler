@@ -5,10 +5,12 @@ const path = require('path');
 const express = require('express');
 const ip = require('ip');
 const bodyParser = require('body-parser');
+const http = require('http');
 const socket = require('socket.io');
 
-
 const app = express();
+const server = http.Server(app);
+const io = socket(server);
 
 app.set('case sensitive routing', false);
 app.use(bodyParser.urlencoded({extended: true}));
