@@ -1,8 +1,12 @@
 'use strict';
 
+const path = require('path');
+
 const express = require('express');
 const ip = require('ip');
 const bodyParser = require('body-parser');
+const socket = require('socket.io');
+
 
 const app = express();
 
@@ -18,6 +22,8 @@ app.post('/data', (req, res) => {
   const distance = req.body.distance;
 
   console.log('Data received: ', distance);
+
+  socket.emit('distance', {distance});
   res.send("The End.");
 });
 
