@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.send('Root page');
+  res.sendFile(path.join(__dirname, 'index.html'));
 })
 
 app.post('/data', (req, res) => {
