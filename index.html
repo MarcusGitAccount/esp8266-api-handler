@@ -6,14 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Root page</title>
 </head>
+<style>
+  .flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+</style>
 <body>
-  <h1></h1>
+  <div class="flex">
+    <h1>
+      Distance: <span id="distance"></span>
+    </h1>
+  </div>
+
   <script src="/socket.io/socket.io.js"></script>
   <script>
     const socket = io.connect(window.location.origin);
 
     socket.on('distance', (data) => {
-      document.querySelector('h1').innerHTML = data.distance;
+      document.querySelector('span#distance').innerHTML = data.distance;
     });
   
   </script>

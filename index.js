@@ -25,7 +25,7 @@ app.post('/data', (req, res) => {
 
   console.log('Data received: ', distance);
 
-  socket.emit('distance', {distance});
+  io.emit('distance', {distance});
   res.send("The End.");
 });
 
