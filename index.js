@@ -33,7 +33,7 @@ app.get('*', (req, res) => {
   res.status(404).send('Wrong way buddy');
 })
 
-const listener = app.listen(process.env.PORT || 5000, () => {
+const listener = server.listen(process.env.PORT || 5000, () => {
   const {address, port} = listener.address();
 
   console.log(`Server started on http://${address}:${port}`)
